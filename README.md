@@ -64,6 +64,7 @@ Some users had no transactions, resulting in NULL values for CLV. I used COALESC
 
 | Challenge                               | Solution                                                                                 |
 | --------------------------------------- | ---------------------------------------------------------------------------------------- |
+| MySQL safe update mode blocked updates to `name` column        | I could have used the `SET SQL_SAFE_UPDATES = 0;` to allow updating the name column  |
 | `name` column had NULLs and blanks           | Replaced with a **concatenation** of `first_name` and `last_name` using `CONCAT` function     |
 | NULLs in `transaction_date` column               | Asummed as unfunded plans — treated as valid inactive accounts                         |
 | `savings_savingsaccount` Dataset transaction date ended in Oct 2023               |  “last 1 year” should be treated relative to the latest available transaction date in the dataset (not the current date) to ensure fairness in evaluation |
