@@ -56,7 +56,7 @@ Counted all valid transactions per user.
 
 Computed average profit per transaction.
 
-Used the provided formula to estimate CLV per user and ordered results from highest to lowest CLV
+Used the CLV formula to estimate CLV per user and ordered results from highest to lowest CLV
 
 Some users had no transactions, resulting in NULL values for CLV. I used COALESCE to return 0 instead of NULL.
 
