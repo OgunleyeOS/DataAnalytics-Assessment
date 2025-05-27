@@ -21,9 +21,9 @@ Calculated the time span between each customer’s earliest and latest transacti
 
 Divided transactions by months to get the average transactions per month, then used a CASE statement to assign each customer to a frequency bucket into three categories:  
 
-High Frequency: 10+ transactions per month  
-Medium Frequency: 3–9 transactions per month  
-Low Frequency: 2 or fewer transactions per month
+High Frequency: 8+ transactions per month  
+Medium Frequency: 4–7 transactions per month  
+Low Frequency: 3 or fewer transactions per month
 
 Grouped the results to show how many customers fall into each bucket.
 
