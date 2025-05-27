@@ -10,8 +10,8 @@ FROM (
         COUNT(s.id) AS total_transactions,
         ROUND(COUNT(s.id) / (DATEDIFF(MAX(s.transaction_date), MIN(s.transaction_date)) / 30.0 + 1), 2) AS avg_txn_per_month,
         CASE
-            WHEN ROUND(COUNT(s.id) / (DATEDIFF(MAX(s.transaction_date), MIN(s.transaction_date)) / 30.0 + 1), 2) >= 10 THEN 'High Frequency'
-            WHEN ROUND(COUNT(s.id) / (DATEDIFF(MAX(s.transaction_date), MIN(s.transaction_date)) / 30.0 + 1), 2) BETWEEN 3 AND 9 THEN 'Medium Frequency'
+            WHEN ROUND(COUNT(s.id) / (DATEDIFF(MAX(s.transaction_date), MIN(s.transaction_date)) / 30.0 + 1), 2) >= 8 THEN 'High Frequency'
+            WHEN ROUND(COUNT(s.id) / (DATEDIFF(MAX(s.transaction_date), MIN(s.transaction_date)) / 30.0 + 1), 2) BETWEEN 4 AND 7 THEN 'Medium Frequency'
             ELSE 'Low Frequency'
         END AS txn_category
     FROM
