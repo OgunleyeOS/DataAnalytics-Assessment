@@ -58,7 +58,7 @@ Computed average profit per transaction.
 
 Used the CLV formula to estimate CLV per user and ordered results from highest to lowest CLV
 
-Some users had no transactions, resulting in NULL values for CLV. I used COALESCE to return 0 instead of NULL.
+Some users had no transactions, resulting in NULL values for CLV. I used IF NULL to return 0 instead of NULL.
 
 # Challenges & Fixes
 
@@ -68,4 +68,4 @@ Some users had no transactions, resulting in NULL values for CLV. I used COALESC
 | `name` column had NULLs and blanks           | Replaced with a **concatenation** of `first_name` and `last_name` using `CONCAT` function     |
 | NULLs in `transaction_date` column               | Asummed as unfunded plans — treated as valid inactive accounts                         |
 | `savings_savingsaccount` Dataset transaction date ended in Oct 2023               |  “last 1 year” should be treated relative to the latest available transaction date in the dataset (not the current date) to ensure fairness in evaluation |
-| CLV calculation returned NULL for some users | Used COALESCE() to convert NULL estimated CLV values to 0, especially for users with no transactions  |
+| CLV calculation returned NULL for some users | IF NULL to convert NULL estimated CLV values to 0, for users with no transactions  |
